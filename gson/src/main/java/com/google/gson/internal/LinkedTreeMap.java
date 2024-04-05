@@ -18,6 +18,7 @@
 package com.google.gson.internal;
 
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
+
 import java.io.IOException;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
@@ -395,54 +396,65 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
     }
   }
 
-  /** Rotates the subtree so that its root's right child is the new root. */
-  private void rotateLeft(Node<K, V> root) {
-    Node<K, V> left = root.left;
-    Node<K, V> pivot = root.right;
+  private void rotate(Node<K, V> root, boolean isLeft){
+    Node<K, V> left = null;
+    Node<K, V> pivot = null;
+    Node<K, V> right = null;
+    if (isLeft) {
+      left = root.left;
+      pivot = root.right;
+    }else {
+      pivot = root.left;
+      right = root.right;
+    }
     Node<K, V> pivotLeft = pivot.left;
     Node<K, V> pivotRight = pivot.right;
 
-    // move the pivot's left child to the root's right
-    root.right = pivotLeft;
-    if (pivotLeft != null) {
-      pivotLeft.parent = root;
+    // move the pivot's side child to the root's pivot
+    if (isLeft) {
+      root.right = pivotLeft;
+      if (pivotLeft != null) {
+        pivotLeft.parent = root;
+      }
+    }else {
+      root.left = pivotRight;
+      if (pivotRight != null) {
+        pivotRight.parent = root;
+      }
     }
+
 
     replaceInParent(root, pivot);
 
-    // move the root to the pivot's left
-    pivot.left = root;
+    // move the root to the pivot's side
+    if (isLeft) {
+      pivot.left = root;
+    }else {
+      pivot.right = root;
+    }
+
     root.parent = pivot;
 
     // fix heights
-    root.height =
-        Math.max(left != null ? left.height : 0, pivotLeft != null ? pivotLeft.height : 0) + 1;
-    pivot.height = Math.max(root.height, pivotRight != null ? pivotRight.height : 0) + 1;
+    if (isLeft) {
+      root.height =
+              Math.max(left != null ? left.height : 0, pivotLeft != null ? pivotLeft.height : 0) + 1;
+      pivot.height = Math.max(root.height, pivotRight != null ? pivotRight.height : 0) + 1;
+    }else {
+      root.height =
+              Math.max(right != null ? right.height : 0, pivotRight != null ? pivotRight.height : 0) + 1;
+      pivot.height = Math.max(root.height, pivotLeft != null ? pivotLeft.height : 0) + 1;
+    }
+  }
+
+  /** Rotates the subtree so that its root's right child is the new root. */
+  private void rotateLeft(Node<K, V> root) {
+    rotate(root, true);
   }
 
   /** Rotates the subtree so that its root's left child is the new root. */
   private void rotateRight(Node<K, V> root) {
-    Node<K, V> pivot = root.left;
-    Node<K, V> right = root.right;
-    Node<K, V> pivotLeft = pivot.left;
-    Node<K, V> pivotRight = pivot.right;
-
-    // move the pivot's right child to the root's left
-    root.left = pivotRight;
-    if (pivotRight != null) {
-      pivotRight.parent = root;
-    }
-
-    replaceInParent(root, pivot);
-
-    // move the root to the pivot's right
-    pivot.right = root;
-    root.parent = pivot;
-
-    // fixup heights
-    root.height =
-        Math.max(right != null ? right.height : 0, pivotRight != null ? pivotRight.height : 0) + 1;
-    pivot.height = Math.max(root.height, pivotLeft != null ? pivotLeft.height : 0) + 1;
+    rotate(root, false);
   }
 
   private EntrySet entrySet;

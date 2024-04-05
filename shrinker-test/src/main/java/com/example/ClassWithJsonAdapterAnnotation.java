@@ -13,8 +13,8 @@ import com.google.gson.TypeAdapterFactory;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonReader;
+import com.google.gson.JsonWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 

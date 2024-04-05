@@ -17,7 +17,7 @@ package com.google.gson.metrics;
 
 import com.google.caliper.BeforeExperiment;
 import com.google.gson.Gson;
-import com.google.gson.stream.JsonReader;
+import com.google.gson.JsonReader;
 import java.io.IOException;
 import java.io.StringReader;
 import java.lang.reflect.Field;

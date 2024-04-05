@@ -18,8 +18,8 @@ package com.google.gson.typeadapters;
 
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonReader;
+import com.google.gson.JsonWriter;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.ParsePosition;

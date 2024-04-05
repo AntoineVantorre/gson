@@ -69,6 +69,18 @@
       <version>33.0.0-jre</version>
       <scope>test</scope>
     </dependency>
+      <dependency>
+          <groupId>org.checkerframework</groupId>
+          <artifactId>checker-qual</artifactId>
+          <version>3.42.0</version>
+          <scope>compile</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+          <version>1.18.30</version>
+          <scope>test</scope>
+      </dependency>
   </dependencies>
 
   <build>

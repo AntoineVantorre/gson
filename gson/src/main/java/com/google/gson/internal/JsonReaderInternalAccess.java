@@ -16,7 +16,7 @@
 
 package com.google.gson.internal;
 
-import com.google.gson.stream.JsonReader;
+import com.google.gson.JsonReader;
 import java.io.IOException;
 
 /** Internal-only APIs of JsonReader available only to other classes in Gson. */

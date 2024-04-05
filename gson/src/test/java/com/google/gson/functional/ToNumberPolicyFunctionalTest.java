@@ -25,7 +25,7 @@ import com.google.gson.ToNumberPolicy;
 import com.google.gson.ToNumberStrategy;
 import com.google.gson.internal.LazilyParsedNumber;
 import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
+import com.google.gson.JsonReader;
 import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.util.Collection;

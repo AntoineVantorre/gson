@@ -21,6 +21,7 @@ import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.fail;
 
 import com.google.gson.FormattingStyle;
+import com.google.gson.JsonWriter;
 import com.google.gson.Strictness;
 import com.google.gson.internal.LazilyParsedNumber;
 import java.io.IOException;

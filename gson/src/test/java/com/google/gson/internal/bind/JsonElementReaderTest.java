@@ -23,8 +23,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonPrimitive;
 import com.google.gson.Strictness;
-import com.google.gson.stream.JsonToken;
-import com.google.gson.stream.MalformedJsonException;
+import com.google.gson.JsonToken;
+import com.google.gson.MalformedJsonException;
 import java.io.IOException;
 import org.junit.Test;
 

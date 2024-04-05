@@ -20,8 +20,8 @@ import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonReader;
+import com.google.gson.JsonWriter;
 import java.io.IOException;
 
 /** A type adapter factory that implements {@code @Intercept}. */

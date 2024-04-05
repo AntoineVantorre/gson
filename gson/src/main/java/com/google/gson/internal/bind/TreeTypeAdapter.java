@@ -28,8 +28,8 @@ import com.google.gson.TypeAdapterFactory;
 import com.google.gson.internal.$Gson$Preconditions;
 import com.google.gson.internal.Streams;
 import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonReader;
+import com.google.gson.JsonWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 

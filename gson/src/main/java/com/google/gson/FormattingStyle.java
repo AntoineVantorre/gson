@@ -16,7 +16,6 @@
 
 package com.google.gson;
 
-import com.google.gson.stream.JsonWriter;
 import java.util.Objects;
 
 /**

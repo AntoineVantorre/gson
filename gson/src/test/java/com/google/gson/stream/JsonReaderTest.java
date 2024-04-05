@@ -17,18 +17,21 @@
 package com.google.gson.stream;
 
 import static com.google.common.truth.Truth.assertThat;
-import static com.google.gson.stream.JsonToken.BEGIN_ARRAY;
-import static com.google.gson.stream.JsonToken.BEGIN_OBJECT;
-import static com.google.gson.stream.JsonToken.BOOLEAN;
-import static com.google.gson.stream.JsonToken.END_ARRAY;
-import static com.google.gson.stream.JsonToken.END_OBJECT;
-import static com.google.gson.stream.JsonToken.NAME;
-import static com.google.gson.stream.JsonToken.NULL;
-import static com.google.gson.stream.JsonToken.NUMBER;
-import static com.google.gson.stream.JsonToken.STRING;
+import static com.google.gson.JsonToken.BEGIN_ARRAY;
+import static com.google.gson.JsonToken.BEGIN_OBJECT;
+import static com.google.gson.JsonToken.BOOLEAN;
+import static com.google.gson.JsonToken.END_ARRAY;
+import static com.google.gson.JsonToken.END_OBJECT;
+import static com.google.gson.JsonToken.NAME;
+import static com.google.gson.JsonToken.NULL;
+import static com.google.gson.JsonToken.NUMBER;
+import static com.google.gson.JsonToken.STRING;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.fail;
 
+import com.google.gson.JsonReader;
+import com.google.gson.JsonToken;
+import com.google.gson.MalformedJsonException;
 import com.google.gson.Strictness;
 import java.io.EOFException;
 import java.io.IOException;

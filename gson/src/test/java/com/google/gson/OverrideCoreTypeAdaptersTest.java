@@ -18,8 +18,6 @@ package com.google.gson;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Locale;
 import org.junit.Test;

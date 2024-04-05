@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.gson.stream;
+package com.google.gson;
 
+import com.google.gson.JsonReader;
 import com.google.gson.Strictness;
 import java.io.IOException;
 

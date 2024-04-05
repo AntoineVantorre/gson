@@ -53,7 +53,7 @@ public final class JavaVersion {
         return firstVer;
       }
     } catch (NumberFormatException e) {
-      return -1;
+        throw new NumberFormatException();
     }
   }
 

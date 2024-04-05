@@ -18,8 +18,7 @@ package com.google.gson;
 
 import com.google.gson.internal.LazilyParsedNumber;
 import com.google.gson.internal.NumberLimits;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.MalformedJsonException;
+
 import java.io.IOException;
 import java.math.BigDecimal;
 

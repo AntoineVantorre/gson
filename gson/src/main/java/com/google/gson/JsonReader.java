@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.gson.stream;
+package com.google.gson;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.Strictness;
 import com.google.gson.internal.JsonReaderInternalAccess;
 import com.google.gson.internal.TroubleshootingGuide;
 import com.google.gson.internal.bind.JsonTreeReader;
+import com.google.gson.JsonScope;
+
 import java.io.Closeable;
 import java.io.EOFException;
 import java.io.IOException;
@@ -253,6 +252,10 @@ public class JsonReader implements Closeable {
 
   static final int BUFFER_SIZE = 1024;
 
+  private final int PATHNAMESI = 32;
+
+  private final int PATHINDICESI = 32;
+
   /**
    * Use a manual buffer to easily read and unread upcoming characters, and also so we can create
    * strings without an intermediate StringBuilder. We decode literals directly out of this buffer,
@@ -296,6 +299,8 @@ public class JsonReader implements Closeable {
     stack[stackSize++] = JsonScope.EMPTY_DOCUMENT;
   }
 
+
+
   /*
    * The path members. It corresponds directly to stack: At indices where the
    * stack contains an object (EMPTY_OBJECT, DANGLING_NAME or NONEMPTY_OBJECT),
@@ -304,8 +309,8 @@ public class JsonReader implements Closeable {
    * that array. Otherwise the value is undefined, and we take advantage of that
    * by incrementing pathIndices when doing so isn't useful.
    */
-  private String[] pathNames = new String[32];
-  private int[] pathIndices = new int[32];
+  private String[] pathNames = new String[PATHNAMESI];
+  private int[] pathIndices = new int[PATHINDICESI];
 
   /** Creates a new instance that reads a JSON-encoded stream from {@code in}. */
   public JsonReader(Reader in) {
@@ -1756,8 +1761,6 @@ public class JsonReader implements Closeable {
 
   /** Consumes the non-execute prefix if it exists. */
   private void consumeNonExecutePrefix() throws IOException {
-    // fast-forward through the leading whitespace
-    int unused = nextNonWhitespace(true);
     pos--;
 
     if (pos + 5 > limit && !fillBuffer(5)) {

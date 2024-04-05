@@ -24,7 +24,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.Strictness;
 import com.google.gson.common.MoreAsserts;
-import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.Arrays;

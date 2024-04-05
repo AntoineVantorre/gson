@@ -175,7 +175,8 @@ public class ISO8601Utils {
       boolean hasT = checkOffset(date, offset, 'T');
 
       if (!hasT && (date.length() <= offset)) {
-        Calendar calendar = new GregorianCalendar(year, month - 1, day);
+        int monthMinusOne = month - 1;
+        Calendar calendar = new GregorianCalendar(year, monthMinusOne, day);
         calendar.setLenient(false);
 
         pos.setIndex(offset);

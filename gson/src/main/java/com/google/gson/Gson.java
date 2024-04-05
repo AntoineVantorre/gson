@@ -37,10 +37,7 @@ import com.google.gson.internal.bind.SerializationDelegatingTypeAdapter;
 import com.google.gson.internal.bind.TypeAdapters;
 import com.google.gson.internal.sql.SqlTypesSupport;
 import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonToken;
-import com.google.gson.stream.JsonWriter;
-import com.google.gson.stream.MalformedJsonException;
+
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.Reader;

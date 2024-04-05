@@ -14,21 +14,18 @@
  * limitations under the License.
  */
 
-package com.google.gson.stream;
+package com.google.gson;
 
-import static com.google.gson.stream.JsonScope.DANGLING_NAME;
-import static com.google.gson.stream.JsonScope.EMPTY_ARRAY;
-import static com.google.gson.stream.JsonScope.EMPTY_DOCUMENT;
-import static com.google.gson.stream.JsonScope.EMPTY_OBJECT;
-import static com.google.gson.stream.JsonScope.NONEMPTY_ARRAY;
-import static com.google.gson.stream.JsonScope.NONEMPTY_DOCUMENT;
-import static com.google.gson.stream.JsonScope.NONEMPTY_OBJECT;
+import static com.google.gson.JsonScope.DANGLING_NAME;
+import static com.google.gson.JsonScope.EMPTY_ARRAY;
+import static com.google.gson.JsonScope.EMPTY_DOCUMENT;
+import static com.google.gson.JsonScope.EMPTY_OBJECT;
+import static com.google.gson.JsonScope.NONEMPTY_ARRAY;
+import static com.google.gson.JsonScope.NONEMPTY_DOCUMENT;
+import static com.google.gson.JsonScope.NONEMPTY_OBJECT;
 
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
-import com.google.gson.FormattingStyle;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.Strictness;
+
 import java.io.Closeable;
 import java.io.Flushable;
 import java.io.IOException;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gson.stream;
+package com.google.gson;
 
 /**
  * Lexical scoping elements within a JSON reader or writer.
